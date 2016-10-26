@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`full-width-text`
+Makes the inner text fit the width of the element
+
+@demo demo/index.html 
+-->
+
+<dom-module id="full-width-text">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'full-width-text',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'full-width-text',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
