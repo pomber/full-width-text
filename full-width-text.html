@@ -52,8 +52,9 @@ Makes the inner text fit the width of the element
 
         console.groupCollapsed();
 
-        for (var i = 0 ; i < 10; i++) {
+        for (var i = 0 ; i < 15; i++) {
           var font = getStyle(el, "font");
+          console.log(font);
           var twidth = getTextWidth(text, font);
           console.log(width, twidth, current);
 
