@@ -17,33 +17,15 @@
   <body>
 
     <div class="vertical-section-container centered">
-      <h3>Basic full-width-text Demo</h3>
       <demo-snippet>
         <template>
           <style>
-            full-width-text {
+            .demo-one {
               width: 300px;
               border: red 1px solid;
             }
           </style>
-          <full-width-text>
-            Lorem ipsum dolor sit amet
-          </full-width-text>
-        </template>
-      </demo-snippet>
-    </div>
-
-    <div class="vertical-section-container centered">
-      <h3>Basic full-width-text Demo</h3>
-      <demo-snippet>
-        <template>
-          <style>
-            full-width-text {
-              width: 300px;
-              border: red 1px solid;
-            }
-          </style>
-          <full-width-text>
+          <full-width-text class="demo-one">
             Lorem ipsum
           </full-width-text>
         </template>
@@ -51,18 +33,48 @@
     </div>
 
     <div class="vertical-section-container centered">
-      <h3>Basic full-width-text Demo</h3>
       <demo-snippet>
         <template>
           <style>
-            full-width-text {
+            .demo-two {
+              border: red 1px solid;
+            }
+
+            .demo-two * {
               width: 100%;
+              text-transform: uppercase;
+              line-height: 0.85em;
+              font-weight: 500;
             }
           </style>
-          <div>
+          <div class="demo-two">
             <full-width-text>Lorem ipsum</full-width-text>
             <full-width-text>dolor</full-width-text>
             <full-width-text>sit amet</full-width-text>
+          </div>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <demo-snippet>
+        <template>
+          <style>
+            .demo-three {
+              border: red 1px solid;
+            }
+
+            .demo-three * {
+              width: 100%;
+              text-transform: uppercase;
+              line-height: 1em;
+              font-weight: 500;
+            }
+          </style>
+          <div class="demo-three">
+            <full-width-text>Friday, June 01</full-width-text>
+            <full-width-text>Wednesday, September 21</full-width-text>
+            <full-width-text>Thursday, October 27</full-width-text>
           </div>
         </template>
       </demo-snippet>
