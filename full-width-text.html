@@ -13,8 +13,15 @@ Makes the inner text fit the width of the element
       :host {
         display: block;
       }
+
+      #container {
+        width: 200px;
+        border: red 1px solid;
+      }
     </style>
-    <h2>Hello [[prop1]]</h2>
+
+    <div id="container">Lorem Ipsum</div>
+
   </template>
 
   <script>
@@ -29,6 +36,58 @@ Makes the inner text fit the width of the element
         },
       },
 
+      attached: function () {
+          this.scale();
+      },
+
+      scale: function() {
+        var min = 1;
+        var max = 50;
+        var el = this.$.container;
+        var width = el.clientWidth - 0.5;
+        var text = el.innerText;
+
+        var current = (min + max) / 2;
+        el.style.fontSize = current + "px";
+
+        console.groupCollapsed();
+
+        for (var i = 0 ; i < 10; i++) {
+          var font = getStyle(el, "font");
+          var twidth = getTextWidth(text, font);
+          console.log(width, twidth, current);
+
+          if (twidth < width) {
+            min = current;
+          } else {
+            max = current;
+          }
+
+          current = (min + max) / 2;
+          el.style.fontSize = current + "px";
+        }
+
+        console.groupEnd();
+      }
     });
+
+    function getTextWidth(text, font) {
+      var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
+      var context = canvas.getContext("2d");
+      context.font = font;
+      var metrics = context.measureText(text);
+      return metrics.width;
+    }
+
+    function getStyle(el, prop) {
+      if (window.getComputedStyle) {
+        return getComputedStyle(el).getPropertyValue(prop);
+      }   
+      try {
+        return el.currentStyle[prop];
+      } catch (e) {
+        return "";
+      }
+    }
   </script>
 </dom-module>
