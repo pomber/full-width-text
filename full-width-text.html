@@ -20,7 +20,7 @@ Makes the inner text fit the width of the element
       }
     </style>
 
-    <div id="container">Lorem Ipsum</div>
+    <content></content>
 
   </template>
 
@@ -42,8 +42,8 @@ Makes the inner text fit the width of the element
 
       scale: function() {
         var min = 1;
-        var max = 50;
-        var el = this.$.container;
+        var max = 150;
+        var el = this;
         var width = el.clientWidth - 0.5;
         var text = el.innerText;
 
