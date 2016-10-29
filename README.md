@@ -2,32 +2,6 @@
 
 Makes the inner text fit the width of the element
 
-<!---
-```
-<custom-element-demo>
-  <template>
-    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="full-width-text.html">
-    <next-code-block></next-code-block>
-  </template>
-</custom-element-demo>
-```
--->
-```html
-<style>
-  .demo * {
-    text-transform: uppercase;
-    line-height: 0.85em;
-    font-weight: 500;
-  }
-</style>
-<div class="demo">
-  <full-width-text>Lorem ipsum</full-width-text>
-  <full-width-text>dolor</full-width-text>
-  <full-width-text>sit amet</full-width-text>
-</div>
-```
-
 ## Demo
 
 [https://pomber.github.io/full-width-text/](https://pomber.github.io/full-width-text/)
