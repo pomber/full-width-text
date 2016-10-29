@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <title>full-width-text demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+
+    <link rel="import" href="../full-width-text.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+      * {
+        font-family: sans-serif !important;
+      };
+    </style>
+  </head>
+  <body>
+
+    <div class="vertical-section-container centered">
+      <demo-snippet>
+        <template>
+          <style>
+            .demo-one {
+              width: 300px;
+              border: red 1px solid;
+            }
+          </style>
+          
+          <full-width-text class="demo-one">
+            Lorem ipsum
+          </full-width-text>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <demo-snippet>
+        <template>
+          <style>
+            .demo-two * {
+              text-transform: uppercase;
+              line-height: 0.85em;
+              font-weight: 500;
+            }
+          </style>
+
+          <div class="demo-two">
+            <full-width-text>Lorem ipsum</full-width-text>
+            <full-width-text>dolor</full-width-text>
+            <full-width-text>sit amet</full-width-text>
+          </div>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <demo-snippet>
+        <template>
+          <style>
+            .demo-three * {
+              text-transform: uppercase;
+              font-weight: 700;
+            }
+          </style>
+
+          <div class="demo-three">
+            <full-width-text>Friday, June 01</full-width-text>
+            <full-width-text>Wednesday, September 21</full-width-text>
+            <full-width-text>Thursday, October 27</full-width-text>
+          </div>
+        </template>
+      </demo-snippet>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`full-width-text`
+Makes the inner text fit the width of the element
+
+@demo demo/index.html 
+-->
+
+<dom-module id="full-width-text">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      #container {
+        width: 200px;
+        border: red 1px solid;
+      }
+    </style>
+
+    <content></content>
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'full-width-text',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'full-width-text',
+        },
+      },
+
+      attached: function () {
+          this.scale();
+      },
+
+      scale: function() {
+        var min = 1;
+        var max = 150;
+        var el = this;
+        var width = el.clientWidth - 0.5;
+        var text = el.innerText;
+
+        var current = (min + max) / 2;
+        el.style.fontSize = current + "px";
+
+        console.groupCollapsed();
+
+        for (var i = 0 ; i < 15; i++) {
+          var font = getStyle(el, "font");
+          console.log(font);
+          var twidth = getTextWidth(text, font);
+          console.log(width, twidth, current);
+
+          if (twidth < width) {
+            min = current;
+          } else {
+            max = current;
+          }
+
+          current = (min + max) / 2;
+          el.style.fontSize = current + "px";
+        }
+
+        console.groupEnd();
+      }
+    });
+
+    function getTextWidth(text, font) {
+      var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
+      var context = canvas.getContext("2d");
+      context.font = font;
+      var metrics = context.measureText(text);
+      return metrics.width;
+    }
+
+    function getStyle(el, prop) {
+      if (window.getComputedStyle) {
+        return getComputedStyle(el).getPropertyValue(prop);
+      }   
+      try {
+        return el.currentStyle[prop];
+      } catch (e) {
+        return "";
+      }
+    }
+  </script>
+</dom-module>

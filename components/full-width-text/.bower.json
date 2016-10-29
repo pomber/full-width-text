@@ -1,0 +1,24 @@
+{
+  "name": "full-width-text",
+  "description": "Makes the inner text fit the width of the element",
+  "main": "full-width-text.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.4.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+  },
+  "homepage": "https://github.com/pomber/full-width-text",
+  "_release": "503af770ca",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "503af770ca0a9950a6487c207274ededc40cae6f"
+  },
+  "_source": "git://github.com/pomber/full-width-text.git",
+  "_target": "master",
+  "_originalSource": "pomber/full-width-text",
+  "_direct": true
+}
