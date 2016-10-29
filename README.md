@@ -2,37 +2,27 @@
 
 Makes the inner text fit the width of the element
 
-## Install the Polymer-CLI
+## Demo
+[https://pomber.github.io/full-width-text/](https://pomber.github.io/full-width-text/)
 
-First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your application locally.
+## Install
 
-## Viewing Your Application
-
+Install the component using Bower:
 ```
-$ polymer serve
-```
-
-## Building Your Application
-
-```
-$ polymer build
+$ bower install full-width-text --save
 ```
 
-This will create a `build/` folder with `bundled/` and `unbundled/` sub-folders
-containing a bundled (Vulcanized) and unbundled builds, both run through HTML,
-CSS, and JS optimizers.
+## Usage
 
-You can serve the built versions by giving `polymer serve` a folder to serve
-from:
-
+1. Import web components' polyfill (if needed):
 ```
-$ polymer serve build/bundled
+<script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
 ```
-
-## Running Tests
-
+2. Import element:
 ```
-$ polymer test
+<link rel="import" href="bower_components/full-width-text/full-width-text.html">
 ```
-
-Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
+3. Use it:
+```
+<full-width-text>Lorem Ipsum</full-width-text>
+```
