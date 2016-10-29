@@ -28,6 +28,14 @@ Makes the inner text fit the width of the element
     Polymer({
 
       is: 'full-width-text',
+      
+      properties: {
+
+        /**
+          * Enabe log
+          */
+        log: Boolean
+      },
 
       attached: function () {
           this.scale();
@@ -43,13 +51,13 @@ Makes the inner text fit the width of the element
         var current = (min + max) / 2;
         el.style.fontSize = current + "px";
 
-        console.groupCollapsed();
+        this._startLog(text, width);
 
         for (var i = 0 ; i < 15; i++) {
           var font = getStyle(el, "font");
-          console.log(font);
           var twidth = getTextWidth(text, font);
-          console.log(width, twidth, current);
+
+          this._log(twidth, current, font);
 
           if (twidth < width) {
             min = current;
@@ -61,8 +69,30 @@ Makes the inner text fit the width of the element
           el.style.fontSize = current + "px";
         }
 
+        this._endLog();
+      },
+
+      _startLog: function(text, width) {
+        if (!this.log) return;
+        this._logData = [];
+        console.groupCollapsed("full-width-text: " + text);
+        console.log("Target width: " + width);
+      },
+
+      _log: function(twidth, current, font) {
+        if (!this.log) return;
+        this._logData.push({
+          'font size': current,
+          'current width': twidth,
+          'font': font,
+        })
+      },
+
+      _endLog: function() {
+        if (!this.log) return;
+        console.table(this._logData);
         console.groupEnd();
-      }
+      },
     });
 
     function getTextWidth(text, font) {
