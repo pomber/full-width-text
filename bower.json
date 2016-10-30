@@ -3,7 +3,8 @@
   "description": "Makes the inner text fit the width of the element",
   "main": "full-width-text.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.4.0"
+    "polymer": "Polymer/polymer#^1.4.0",
+    "element-resize-detector": "^1.1.9"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

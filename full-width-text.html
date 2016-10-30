@@ -1,4 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
+<script src="../element-resize-detector/dist/element-resize-detector.min.js"></script>
+
 
 <!--
 `full-width-text`
@@ -38,7 +40,16 @@ Makes the inner text fit the width of the element
       },
 
       attached: function () {
-          this.scale();
+        var erd = elementResizeDetectorMaker({
+          strategy: "scroll"
+        });
+
+        var self = this;
+        erd.listenTo(this, function(element) {
+          //var width = element.offsetWidth;
+          //console.log("Size: " + width + "x" + height);
+          self.scale();
+        });
       },
 
       scale: function() {
