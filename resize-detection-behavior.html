@@ -1,0 +1,22 @@
+<link rel="import" href="../polymer/polymer.html">
+<script src="../element-resize-detector/dist/element-resize-detector.min.js"></script>
+
+<script>
+  /**
+   * 
+   **/
+  ResizeDetectionBehavior = {
+    attached: function() {
+        var erd = elementResizeDetectorMaker({
+          strategy: "scroll"
+        });
+
+        var self = this;
+        erd.listenTo(this, function(element) {
+          //var width = element.offsetWidth;
+          //console.log("Width: " + width);
+          self.fire("resize-detected");
+        });
+    },
+  };
+</script>
