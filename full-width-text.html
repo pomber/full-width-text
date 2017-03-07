@@ -102,7 +102,7 @@ Makes the inner text fit the width of the element
 
     function getStyle(el, prop) {
       if (window.getComputedStyle) {
-        return getComputedStyle(el).getPropertyValue(prop);
+        return getComputedStyle(el).getPropertyValue("font-size") + " " + getComputedStyle(el).getPropertyValue("font-family");
       }   
       try {
         return el.currentStyle[prop];
